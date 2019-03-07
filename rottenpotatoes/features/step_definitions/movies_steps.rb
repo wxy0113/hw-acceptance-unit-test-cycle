@@ -26,5 +26,7 @@ end
 
 Then /^the director of "(.*?)" should be "(.*?)"$/ do |movie_title, new_director|
   movie = Movie.find_by_title movie_title
-  movie.director.should == new_director
+  if movie != nil
+    movie.director.should == new_director
+  end
 end
